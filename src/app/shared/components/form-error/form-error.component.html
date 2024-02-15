@@ -1,0 +1,11 @@
+<div *ngFor="let error of errors | keyvalue">
+    <ng-container [ngSwitch]="error.key">
+        <p class="text-danger" *ngSwitchCase="'pattern'">Fecha inválida</p>
+        <p *ngSwitchCase="'required'">Se requiere contenido en el campo {{fieldName}}</p>
+        <p *ngSwitchCase="'minlength'">Debe tener {{error.value.requiredLength}} caracteres</p>
+        <p *ngSwitchCase="'maxlength'">Debe tener {{error.value.requiredLength}} caracteres como máximo</p>
+        <p *ngSwitchCase="'invalidEmail'">Ingresar correo válido</p>
+        <p *ngSwitchCase="'min'">La nota mínima es de {{error.value.min}}</p>
+        <p *ngSwitchCase="'max'">La nota máxima es de {{error.value.max}}</p>
+    </ng-container>
+</div>

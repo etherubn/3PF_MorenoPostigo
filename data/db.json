@@ -1,0 +1,62 @@
+{
+  "alumnos": [
+    {
+      "id": "1",
+      "nombre": "Pedro Alejandro213213",
+      "apellido": "Suarez Postigo",
+      "email": "morsuar@gmail.com",
+      "course": {
+        "id": "1",
+        "nombre": "React",
+        "clases": "25",
+        "disponible": "true"
+      }
+    },
+    {
+      "id": "2",
+      "nombre": "Jimena Alexandra",
+      "apellido": "Mareq Del",
+      "email": "rator@hotmail.com",
+      "course": {
+        "id": "1",
+        "nombre": "React",
+        "clases": "25",
+        "disponible": "true"
+      }
+    },
+    {
+      "id": "3",
+      "nombre": "Pedro Alejandro",
+      "apellido": "Suarez Postigo",
+      "email": "morsuar@gmail.com",
+      "course": {
+        "id": "1",
+        "nombre": "React",
+        "clases": "25",
+        "disponible": "true"
+      }
+    },
+    {
+      "id": "d4fe",
+      "nombre": "35345",
+      "apellido": "456456",
+      "email": "456456@gmail.com",
+      "course": {
+        "id": 1,
+        "nombre": "React",
+        "clases": 25,
+        "disponible": true
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Raul",
+      "lastName": "Moreno",
+      "email": "rmp@gmail.com",
+      "password": "12345678",
+      "token":"32ewdfghm4654654654"
+    }
+  ]
+}

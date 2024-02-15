@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>{{data? "Editar":"Agregar"}} curso</h2>
+<mat-dialog-content>
+  <form [formGroup]="form" action="">
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field class="mb-4">
+            <mat-label>Curso</mat-label>
+            <input [formControl]="nombreControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(nombreControl)" [errors]="nombreControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="mb-4">
+            <mat-label>Cantidad de Clases</mat-label>
+            <input [formControl]="clasesControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(clasesControl)"
+                [errors]="clasesControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="mb-4">
+            <mat-label>Disponibilidad</mat-label>
+            <input [value]='disponibleControl?"Disponible":"NO ESTÁ DISPONIBLE"' [formControl]="disponibleControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(disponibleControl)" [errors]="disponibleControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-center">
+  <button color="primary" mat-raised-button mat-dialog-close>Cancel</button>
+  <button color="accent" mat-raised-button (click)="sendCurso()" mat-button>{{data? "Editar": "Agregar"}}</button>
+</mat-dialog-actions>

@@ -1,0 +1,8 @@
+<div class="contenedor p-4">
+    <cursos-lista (onCourse)="openDialog($event)" (onIndex)="deleteCurso($event)" [datasource]="cursos"></cursos-lista>
+<div class="flex justify-content-end">
+    <button (click)="openDialog(undefined)" class="mt-2" mat-raised-button color="primary">Agregar</button>
+</div>
+
+</div>
+

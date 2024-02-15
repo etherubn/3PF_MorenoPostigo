@@ -1,0 +1,33 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <h2 class="p-2">Lista de Opciones</h2>
+        <hr>
+        <mat-nav-list>
+            <mat-list-item [routerLink]="item.url" (click)="drawer.toggle()" *ngFor="let item of sidebarItems">
+                <mat-icon>{{item.icon}}</mat-icon>
+                {{item.label}}
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content class="example-content">
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>App de Alumnos</span>
+            <span class="example-spacer"></span>
+            <button (click)="closeSession()" mat-button>
+                Salir
+                <mat-icon>
+                    logout
+                </mat-icon>
+            </button>
+        </mat-toolbar>
+        <div class="grid-nogutter">
+            <div class="col-12 md:col-10 mx-auto">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

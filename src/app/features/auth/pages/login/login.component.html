@@ -1,0 +1,28 @@
+<div class="login-cotainer">
+    <mat-card class="example-card p-3">
+        <h1 class="text-center">Ingreso a la plataforma</h1>
+        <mat-card-content>
+            <form [formGroup]="formulario" (ngSubmit)="onUser()" class="row">
+                <mat-form-field class="col-12 mb-4" appearance="fill">
+                    <mat-label>Correo</mat-label>
+                    <mat-hint>rmp@gmail.com</mat-hint>
+                    <input [formControl]="correoControl" matInput placeholder="Ingresar el email">
+                    <mat-error>
+                        <app-form-error [fieldName]="fieldName(correoControl)" [errors]="correoControl.errors"></app-form-error>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-12 mb-4" appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input type="password" [formControl]="passwordControl" matInput placeholder="Contraseña mayor o igual a 8 caracteres">
+                    <mat-hint>12345678</mat-hint>
+                    <mat-error>
+                        <app-form-error [fieldName]="fieldName(passwordControl)" [errors]="passwordControl.errors"></app-form-error>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-center">
+            <button (click)="onUser()" mat-raised-button color="primary">Ingresar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

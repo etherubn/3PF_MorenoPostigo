@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>{{data? "Editar":"Agregar"}} alumno</h2>
+<mat-dialog-content>
+  <form [formGroup]="form" action="">
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field class="mb-4">
+            <mat-label>Nombre</mat-label>
+            <input [formControl]="nombreControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(nombreControl)" [errors]="nombreControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="mb-4">
+            <mat-label>Apellido</mat-label>
+            <input [formControl]="apellidoControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(apellidoControl)"
+                [errors]="apellidoControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="mb-4">
+            <mat-label>Correo</mat-label>
+            <input [formControl]="emailControl" matInput>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(emailControl)" [errors]="emailControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field class="mb-4">
+            <mat-label>Seleccionar sección</mat-label>
+            <mat-select [formControl]="cursoControl">
+              <mat-option *ngFor="let course  of courses" [value]="course">{{course.nombre}}</mat-option>
+            </mat-select>
+            <mat-error>
+              <app-form-error [fieldName]="fieldName(cursoControl)" [errors]="cursoControl.errors"></app-form-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-center">
+  <button color="primary" mat-raised-button mat-dialog-close>Cancel</button>
+  <button color="accent" mat-raised-button (click)="sendAlumno()" mat-button>{{data? "Editar": "Agregar"}}</button>
+</mat-dialog-actions>

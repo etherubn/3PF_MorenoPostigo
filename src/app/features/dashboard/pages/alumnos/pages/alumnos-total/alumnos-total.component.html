@@ -1,0 +1,5 @@
+<alumnos-lista (onStudent)="editAlumno($event)" (onIndex)="deleteStudent($event)"
+    [datasource]="alumnos"></alumnos-lista>
+<div class="flex justify-content-end">
+    <button (click)="addAlumo()" class="mt-2" mat-raised-button color="primary">Agregar</button>
+</div>
